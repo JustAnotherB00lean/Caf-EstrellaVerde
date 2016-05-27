@@ -11,6 +11,7 @@ namespace Cafeteria.Controllers
 {
     public class LicorBebidaController : ApiController
     {
+        //este comentario sera borrado repetidas veces
         [HttpPost]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         public HttpResponseMessage Post(FormDataCollection form)

@@ -163,6 +163,7 @@
     <Compile Include="Models\conexion.cs" />
     <Compile Include="Models\Clase_Licor.cs" />
     <Compile Include="Models\Clase_Sucursales.cs" />
+    <Compile Include="Models\Producto_Combo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

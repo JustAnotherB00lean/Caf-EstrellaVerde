@@ -31,7 +31,7 @@ namespace Cafeteria.Models
             {
 
                 strconexion = "Provider=SQLOLEDB;Data Source= 192.168.59.150; Initial Catalog='2012089';PersistentSecurityInfo=True;User ID=desarrollo;Password=pass123;Pooling=False;";
-                                                // Data Source=192.168.52.116;Initial Catalog="Cafeteria Jefferson";User ID=desarrollo;Password=***********
+                               
             }//AQUI VA LA CADENA DE CONEXION DE SU SERVIDOR Y BASE DE DATOS
 
             //cadena = "Provider=SQLOLEDB;Data Source=SU SERVIDOR;Initial Catalog=SU

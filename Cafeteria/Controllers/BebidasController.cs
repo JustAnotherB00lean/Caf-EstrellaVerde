@@ -21,18 +21,9 @@ namespace Cafeteria.Controllers
             {
                 case "Insertar":
                     {
-                        String stringFoto = form.Get("foto");
-                        stringFoto = stringFoto.Replace("data:image/jpeg;base64,", "");
-                        byte[] bytes = Convert.FromBase64String(stringFoto);
-
-                        //MemoryStream memory_foto = new MemoryStream(bytes);
-                        //Bitmap bmp = (Bitmap)Bitmap.FromStream(memory_foto);
-                        //Bitmap bmp = new Bitmap(34, 34);
-
-                        Models.Clase_Bebidas.Bebidas.insertar_Bebidas(Convert.ToInt32(form.Get("id")),form.Get("nombre"),form.Get("ingredientes"),Convert.ToInt32(form.Get("precio_ind")),Convert.ToInt32(form.Get("precio_porc")),Convert.ToInt32(form.Get("precio_t_ind")),Convert.ToInt32(form.Get("precio_t_porc")), bytes);
+                        Models.Clase_Bebidas.Bebidas.insertar_Bebidas(Convert.ToInt32(form.Get("id")),form.Get("nombre"),form.Get("ingredientes"),Convert.ToInt32(form.Get("precio_ind")),Convert.ToInt32(form.Get("precio_porc")),Convert.ToInt32(form.Get("precio_t_ind")),Convert.ToInt32(form.Get("precio_t_porc")), form.Get("foto"));
                          HttpResponseMessage response = Request.CreateResponse<int>(HttpStatusCode.Created, 1);
                         return response;
-                        //memory_foto.Close();
                         break;
                     }
 
@@ -44,7 +35,7 @@ namespace Cafeteria.Controllers
                         //var memory_foto = new MemoryStream(bytes_foto);
                         //Bitmap bmp = new Bitmap(memory_foto);
 
-                        Models.Clase_Bebidas.Bebidas.modificar_Bebidas(Convert.ToInt32(form.Get("id")), form.Get("nombre"), form.Get("ingredientes"), Convert.ToInt32(form.Get("precio_ind")), Convert.ToInt32(form.Get("precio_porc")), Convert.ToInt32(form.Get("precio_t_ind")), Convert.ToInt32(form.Get("precio_t_porc")), bytes_foto);
+                        Models.Clase_Bebidas.Bebidas.modificar_Bebidas(Convert.ToInt32(form.Get("id")), form.Get("nombre"), form.Get("ingredientes"), Convert.ToInt32(form.Get("precio_ind")), Convert.ToInt32(form.Get("precio_porc")), Convert.ToInt32(form.Get("precio_t_ind")), Convert.ToInt32(form.Get("precio_t_porc")), form.Get("foto"));
                          HttpResponseMessage response = Request.CreateResponse<int>(HttpStatusCode.Created, 1);
                         return response;
                         //memory_foto.Close();

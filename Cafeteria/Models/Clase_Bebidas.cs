@@ -19,7 +19,7 @@ namespace Cafeteria.Models
             private int Precio_porc;
             private int Precio_T_ind;
             private int Precio_T_porc;
-            private byte[] foto;
+            private String foto;
             private List<Clase_Bebidas> listadoBebidas;
 
             public Bebidas() //constructor de la clase
@@ -31,11 +31,11 @@ namespace Cafeteria.Models
             public int _Precio_porc { get { return Precio_porc; } set { Precio_porc = value; } }
             public int _Precio_T_ind { get { return Precio_T_ind; } set { Precio_T_ind = value; } }
             public int _Precio_T_porc { get { return Precio_T_porc; } set { Precio_T_porc = value; } }
-            public byte[] _foto { get { return foto; } set { foto = value; } }
+            public String _foto { get { return foto; } set { foto = value; } }
 
             public List<Clase_Bebidas> _listadoBebidas { get { return listadoBebidas; } set { listadoBebidas = value; } }
 
-            public static int insertar_Bebidas(int Cod_bebida, String Nombre, String ingredientes,int precio_ind, int precio_por, int Precio_T_ind, int Precio_T_porc, byte[] foto)
+            public static int insertar_Bebidas(int Cod_bebida, String Nombre, String ingredientes,int precio_ind, int precio_por, int Precio_T_ind, int Precio_T_porc,String foto)
             {
                 int respuesta = 0;
 
@@ -54,7 +54,7 @@ namespace Cafeteria.Models
                 conx_detalles.annadir_parametro(precio_por, 1);
                 conx_detalles.annadir_parametro(Precio_T_ind, 1);
                 conx_detalles.annadir_parametro(Precio_T_porc, 1);
-                conx_detalles.annadir_parametro(foto, 5);
+                conx_detalles.annadir_parametro(foto, 2);
                 CONTENEDOR = conx_detalles.busca();
                 while (CONTENEDOR.Read())
                 {
@@ -90,7 +90,7 @@ namespace Cafeteria.Models
                 return respuesta;
             }
 
-            public static int modificar_Bebidas(int Cod_bebida, String Nombre, String ingredientes, int precio_ind, int precio_por, int Precio_T_ind, int Precio_T_porc, byte[] foto)
+            public static int modificar_Bebidas(int Cod_bebida, String Nombre, String ingredientes, int precio_ind, int precio_por, int Precio_T_ind, int Precio_T_porc, String foto)
             {
                 int respuesta = 0;
 
@@ -109,7 +109,7 @@ namespace Cafeteria.Models
                 conx_detalles.annadir_parametro(precio_por, 1);
                 conx_detalles.annadir_parametro(Precio_T_ind, 1);
                 conx_detalles.annadir_parametro(Precio_T_porc, 1);
-                conx_detalles.annadir_parametro(foto, 5);
+                conx_detalles.annadir_parametro(foto, 2);
                 CONTENEDOR = conx_detalles.busca();
                 while (CONTENEDOR.Read())
                 {
@@ -145,7 +145,7 @@ namespace Cafeteria.Models
                     NUEVABEBIDA.Precio_T_porc = Convert.ToInt32(CONTENEDOR["Precio_T_porc"]);
 
 
-                    NUEVABEBIDA.foto = Encoding.ASCII.GetBytes(CONTENEDOR["FOTO"].ToString()); 
+                    NUEVABEBIDA.foto = CONTENEDOR["FOTO"].ToString(); 
                      Listaadevolver.Add(NUEVABEBIDA);
 
                 }

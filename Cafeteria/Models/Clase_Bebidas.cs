@@ -156,11 +156,6 @@ namespace Cafeteria.Models
 
             }
 
-            //public List<Bebidas> Seleccionar_Bebida(int Codigo_Bebida)
-            //{
-            //    List<Bebidas> lista_bebidas= new List<Bebidas>;
-            //    return lista_bebidas;
-            //}
         }
     }
 }

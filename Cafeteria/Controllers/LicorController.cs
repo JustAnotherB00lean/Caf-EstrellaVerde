@@ -46,8 +46,8 @@ namespace Cafeteria.Controllers
                 case "listar":
                     {
 
-                        List<Models.Clase_Bebidas.Bebidas> LISTAVACIA = new List<Models.Clase_Bebidas.Bebidas>();
-                        HttpResponseMessage response = Request.CreateResponse<List<Models.Clase_Bebidas.Bebidas>>(HttpStatusCode.Created, Models.Clase_Bebidas.Bebidas.Todas_las_bebidas());
+                        List<Models.Clase_Licor.Licor> LISTAVACIA = new List<Models.Clase_Licor.Licor>();
+                        HttpResponseMessage response = Request.CreateResponse<List<Models.Clase_Licor.Licor>>(HttpStatusCode.Created, Models.Clase_Licor.Licor.todo_licor());
                         return response;
                         break;
                     }

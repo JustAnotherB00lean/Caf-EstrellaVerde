@@ -92,6 +92,34 @@ namespace Cafeteria.Models
                 CONTENEDOR.Close();
                 return respuesta;
             }
+
+            public static List<Licor> todo_licor()
+            {
+                List<Licor> Listaadevolver = new List<Licor>();
+                Conexion cnx = new Conexion();
+                cnx.parametro();
+                cnx.inicializa();
+                string CONSULTA;
+                System.Data.OleDb.OleDbDataReader CONTENEDOR;
+                CONSULTA = "EXEC SELECCIONAR_LICOR ?";
+                cnx.annadir_consulta(CONSULTA);
+                cnx.annadir_parametro(0, 1);
+                CONTENEDOR = cnx.busca();
+                while (CONTENEDOR.Read())
+                {
+                    Licor nuevoLicor = new Licor();
+                    nuevoLicor.Cod_licor = Convert.ToInt32(CONTENEDOR["COD_LICOR"]);
+                    nuevoLicor.nombre = CONTENEDOR["NOMBRE"].ToString();
+
+                    Listaadevolver.Add(nuevoLicor);
+
+                }
+                cnx.conexion.Close();
+                cnx.conexion.Dispose();
+                CONTENEDOR.Close();
+                return Listaadevolver;
+
+            }
         }
     }
     }

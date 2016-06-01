@@ -10,8 +10,8 @@ namespace Cafeteria.Models
         private int id_combo;
         private int id_producto;
 
-        Producto_Combo();
-
+       public Producto_Combo() //constructor de la clase
+            { }
         public int _id_combo { get { return id_combo; } set { id_combo = value; } }
         public int _id_producto { get { return id_producto; } set { id_producto = value; } }
 

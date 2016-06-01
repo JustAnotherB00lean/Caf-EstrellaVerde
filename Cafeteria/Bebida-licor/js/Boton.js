@@ -1,32 +1,28 @@
-<script type="text/javascript">
-function listadeproductos() {
-    var Producto = new Object();
-    Producto.op = "listar";
+var contador = 0;
 
+function listadeproductos() {
+    var bebida = new Object();
+    bebida.op = "listar";
+    contador += 1;
     $.ajax({
-        url: "http://localhost:1331/api/Producto",
-   
+        url: "http://localhost:4684/api/Bebidas",
+
         type: 'POST',
         dataType: 'json',
-        data: Producto,
+        data: bebida,
         success: function (data, textStatus, xhr) {
-            
+
             for (var ele in data) {
-                var x = document.getElementById('Bebida')
-                x= x + "<li id='1'> <span>India</span> </li>"
-                var option = document.createElement("option");
-                option.text = data[ele]._Nombre;
-                option.value = data[ele]._Id;
-                option.id= data[ele]._Id;
-                x.add(option);
+                var x = document.getElementById('bebida').innerHTML;
+                document.getElementById('bebida').innerHTML = x + "<li id='" + contador + "' class='" + data[ele]._Cod_bebida + "'> <span>" + data[ele]._Nombre + "</span> </li>";
+
             }
 
 
-        },"
-            error: function (xhr, textStatus, errorThrown) {
-                alert(xhr);
-            }
-});
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            alert(xhr + " la wea fallo");
+        }
+    });
 
 }
-</script>

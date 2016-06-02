@@ -103,6 +103,38 @@ namespace Cafeteria.Models
                 CONTENEDOR.Close();
                 return respuesta;
             }
+            public static List<Combo> Todas_los_Combos()
+            {
+                List<Combo> Listaadevolver = new List<Combo>();
+                Conexion cnx = new Conexion();
+                cnx.parametro();
+                cnx.inicializa();
+                string CONSULTA;
+                System.Data.OleDb.OleDbDataReader CONTENEDOR;
+                CONSULTA = "EXEC SELECCIONAR_COMBO ?";
+                cnx.annadir_consulta(CONSULTA);
+                cnx.annadir_parametro(0, 1);
+                CONTENEDOR = cnx.busca();
+                while (CONTENEDOR.Read())
+                {
+                    Combo NUEVOBOCADILLO = new Combo();
+                    NUEVOBOCADILLO.Cod_combo = Convert.ToInt32(CONTENEDOR["COD_COMBO"]);
+                    NUEVOBOCADILLO.Cod_Postal_S = Convert.ToInt32(CONTENEDOR["COD_POSTAL_S"]);
+                    NUEVOBOCADILLO.Precio_Salon = Convert.ToInt32(CONTENEDOR["PRECIO_SALON"]);
+                    NUEVOBOCADILLO.Precio_Terraza = Convert.ToInt32(CONTENEDOR["PRECIO_TERRAZA"]);
+                    
+
+
+                    //  NUEVABEBIDA.foto = CONTENEDOR["FOTO"].ToString();
+                    Listaadevolver.Add(NUEVOBOCADILLO);
+
+                }
+                cnx.conexion.Close();
+                cnx.conexion.Dispose();
+                CONTENEDOR.Close();
+                return Listaadevolver;
+
+            }
         }
     }
 }

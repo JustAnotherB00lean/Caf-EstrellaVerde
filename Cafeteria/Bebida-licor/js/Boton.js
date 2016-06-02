@@ -58,7 +58,7 @@ function insertarproducto() {
         data: NuevaCliente,
         success: function (data, textstatus, xhr) {
             if (data == 1) {
-                alert("Correcto Rick")
+                alert("Correcto Rick");
             }
         },
         error: function (xhr, textstatus, errorThrown) {
@@ -66,6 +66,7 @@ function insertarproducto() {
         }
     });
 }
+
 function ModificarCliente() {
     var ModificarCliente = new Object();
     ModificarCliente.id = document.getElementById("id").value;

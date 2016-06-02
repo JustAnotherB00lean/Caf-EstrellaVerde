@@ -9,9 +9,9 @@ function listadeproductos() {
     bebida.op = "listar";
     bocadillo.op = "listar";
     combo.op = "listar";
-    contador_bebida += 1;
-    contador_bocadillo += 1;
-    contador_combo += 1;
+    
+
+
 
     $.ajax({
         url: "http://localhost:4684/api/BEBIDAS",
@@ -21,6 +21,7 @@ function listadeproductos() {
         data: bebida,
         success: function (data, textStatus, xhr) {
             for (var ele in data) {
+                contador_bebida += 1;
                 var x = document.getElementById("Bebida").innerHTML;
                 document.getElementById("Bebida").innerHTML = x + "<option value='" + data[ele]._Cod_bebida + "' class='" + contador_bebida + "'>" + data[ele]._Nombre + "</option>";
             }
@@ -39,6 +40,7 @@ function listadeproductos() {
         success: function (data, textStatus, xhr) {
 
             for (var ele in data) {
+                contador_bocadillo += 1;
                 var y = document.getElementById('Bocadillo').innerHTML;
                 document.getElementById('Bocadillo').innerHTML = y + "<option value='" + data[ele]._Cod_bocadillo + "' class='" + contador_bocadillo + "'>" + data[ele]._Nombre + "</option>";
             }
@@ -57,6 +59,7 @@ function listadeproductos() {
         success: function (data, textStatus, xhr) {
 
             for (var ele in data) {
+                contador_combo += 1;
                 var z = document.getElementById('Combo').innerHTML;
                 document.getElementById('Combo').innerHTML = z + "<option value='" + data[ele]._Cod_combo + "' class='" + contador_combo + "'>" + data[ele]._Cod_combo + "</option>";
             }

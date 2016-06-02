@@ -126,14 +126,14 @@ namespace Cafeteria.Models
                 cnx.inicializa();
                 string CONSULTA;
                 System.Data.OleDb.OleDbDataReader CONTENEDOR;
-                CONSULTA = "EXEC SELECCIONAR_BEBIDAS ?";
+                CONSULTA = "EXEC SELECCIONAR_BOCADILLOS ?";
                 cnx.annadir_consulta(CONSULTA);
                 cnx.annadir_parametro(0, 1);
                 CONTENEDOR = cnx.busca();
                 while (CONTENEDOR.Read())
                 {
                     Bocadillos NUEVOBOCADILLO = new Bocadillos();
-                    NUEVOBOCADILLO.Cod_bocadillo = Convert.ToInt32(CONTENEDOR["Cod_bocadillo"]);
+                    NUEVOBOCADILLO.Cod_bocadillo = Convert.ToInt32(CONTENEDOR["COD_BOCADILLOS"]);
                     NUEVOBOCADILLO.Nombre = CONTENEDOR["Nombre"].ToString();
                     NUEVOBOCADILLO.Ingredientes = CONTENEDOR["ingredientes"].ToString();
                     NUEVOBOCADILLO.Precio_ind = Convert.ToInt32(CONTENEDOR["Precio_ind"]);

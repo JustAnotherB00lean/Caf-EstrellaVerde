@@ -455,6 +455,7 @@
     <Content Include="Login\css\normalize.css" />
     <Content Include="Login\css\style.css" />
     <Content Include="Login\index.html" />
+    <Content Include="Login\js\Ajax.js" />
     <Content Include="Login\js\index.js" />
     <Content Include="Login\js\prefixfree.min.js" />
     <Content Include="Login\Parallax01.jpg" />

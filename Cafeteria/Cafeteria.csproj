@@ -487,6 +487,12 @@
     <Content Include="Licores\js\script.js" />
     <Content Include="Licores\js\wow.js" />
     <Content Include="Licores\Licores.html" />
+    <Content Include="Login\css\normalize.css" />
+    <Content Include="Login\css\style.css" />
+    <Content Include="Login\index.html" />
+    <Content Include="Login\js\index.js" />
+    <Content Include="Login\js\prefixfree.min.js" />
+    <Content Include="Login\Parallax01.jpg" />
     <Content Include="Pagina_Principal.html" />
     <Content Include="Producto-combo\Bebidas.html" />
     <Content Include="Producto-combo\css\style.css" />
@@ -636,6 +642,9 @@
     <Content Include="Producto-combo\coffeescript\index.coffeescript" />
     <Content Include="Producto-combo\less\style.less" />
     <Content Include="Producto-combo\stylus\style.stylus" />
+    <Content Include="Login\coffeescript\index.coffeescript" />
+    <Content Include="Login\config.rb" />
+    <Content Include="Login\sass\style.sass" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

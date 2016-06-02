@@ -58,7 +58,7 @@ function insertarproducto() {
         data: NuevaCliente,
         success: function (data, textstatus, xhr) {
             if (data == 1) {
-                alerta("Correcto Rick")
+                alert("Correcto Rick")
             }
         },
         error: function (xhr, textstatus, errorThrown) {

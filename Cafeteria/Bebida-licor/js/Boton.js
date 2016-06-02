@@ -19,7 +19,7 @@ function listadeproductos() {
 
             for (var ele in data) {
                 var x = document.getElementById('bebida').innerHTML;
-                document.getElementById('bebida').innerHTML = x + "<li id='" + contador_bebida + "' class='" + data[ele]._Cod_bebida + "'> <span>" + data[ele]._Nombre + "</span> </li>";
+                document.getElementById('bebida').innerHTML = x + "<li id='" + contador + "' class='" + data[ele]._Cod_bebida + "'> <span>" + data[ele]._Nombre + "</span> </li>";
 
             }
 

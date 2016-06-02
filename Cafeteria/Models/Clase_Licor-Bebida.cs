@@ -26,7 +26,7 @@ namespace Cafeteria.Models
                 string CONSULTA;
                 System.Data.OleDb.OleDbDataReader CONTENEDOR;
 
-                CONSULTA = "EXEC INSERTAR_BEBIDAS ?,?";
+                CONSULTA = "EXEC INSERTAR_LICORBEBIDA ?,?";
                 conx_detalles.annadir_consulta(CONSULTA);
                 conx_detalles.annadir_parametro(Cod_bebida, 1);
                 conx_detalles.annadir_parametro(Cod_licor, 1);
@@ -51,7 +51,7 @@ namespace Cafeteria.Models
                 string CONSULTA;
                 System.Data.OleDb.OleDbDataReader CONTENEDOR;
 
-                CONSULTA = "EXEC ELIMINAR_BEBIDAS ?,?";
+                CONSULTA = "EXEC ELIMINAR_LICORBEBIDA ?,?";
                 conx_detalles.annadir_consulta(CONSULTA);
                 conx_detalles.annadir_parametro(Cod_bebida, 1);
                 conx_detalles.annadir_parametro(Cod_licor, 1);
@@ -76,7 +76,7 @@ namespace Cafeteria.Models
                 string CONSULTA;
                 System.Data.OleDb.OleDbDataReader CONTENEDOR;
 
-                CONSULTA = "EXEC MODIFICAR_BEBIDAS ?,?";
+                CONSULTA = "EXEC MODIFICAR_LICORBEBIDA ?,?";
                 conx_detalles.annadir_consulta(CONSULTA);
                 conx_detalles.annadir_parametro(Cod_bebida, 1);
                 conx_detalles.annadir_parametro(Cod_licor, 1);
@@ -99,7 +99,7 @@ namespace Cafeteria.Models
                 cnx.inicializa();
                 string CONSULTA;
                 System.Data.OleDb.OleDbDataReader CONTENEDOR;
-                CONSULTA = "EXEC SELECCIONAR_BEBIDAS ?";
+                CONSULTA = "EXEC SELECCIONAR_LICORBEBIDA ?";
                 cnx.annadir_consulta(CONSULTA);
                 cnx.annadir_parametro(0, 1);
                 CONTENEDOR = cnx.busca();

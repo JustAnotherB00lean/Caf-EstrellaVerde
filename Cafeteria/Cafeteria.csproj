@@ -176,7 +176,6 @@
     <Content Include="Bebida-licor\images\parallax02.jpg" />
     <Content Include="Bebida-licor\index.html" />
     <Content Include="Bebida-licor\js\Boton.js" />
-    <Content Include="Bebida-licor\js\index.js" />
     <Content Include="Bebida-licor\license.txt" />
     <Content Include="Bebida-licor\parallax01.jpg" />
     <Content Include="Bebida-licor\README.txt" />

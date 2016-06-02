@@ -146,6 +146,7 @@
     <Compile Include="Controllers\BebidasController.cs" />
     <Compile Include="Controllers\BocadillosController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ComboProductoController.cs" />
     <Compile Include="Controllers\CombosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LicorBebidaController.cs" />
@@ -488,13 +489,7 @@
     <Content Include="Licores\Licores.html" />
     <Content Include="Pagina_Principal.html" />
     <Content Include="Producto-combo\Bebidas.html" />
-    <Content Include="Producto-combo\css\animate.css" />
-    <Content Include="Producto-combo\css\booking.css" />
-    <Content Include="Producto-combo\css\grid.css" />
-    <Content Include="Producto-combo\css\material-design.css" />
-    <Content Include="Producto-combo\css\rd-mailform.css" />
     <Content Include="Producto-combo\css\style.css" />
-    <Content Include="Producto-combo\css\styleImage.css" />
     <Content Include="Producto-combo\images\favicon.ico" />
     <Content Include="Producto-combo\images\ie8-panel\warning_bar_0000_us.jpg" />
     <Content Include="Producto-combo\images\img01.jpg" />
@@ -522,6 +517,7 @@
     <Content Include="Producto-combo\js\jquery.ui.totop.js" />
     <Content Include="Producto-combo\js\script.js" />
     <Content Include="Producto-combo\js\wow.js" />
+    <Content Include="Producto-combo\parallax01.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

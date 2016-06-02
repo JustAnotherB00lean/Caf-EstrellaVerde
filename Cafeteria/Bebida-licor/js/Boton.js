@@ -17,8 +17,8 @@ function listadeproductos() {
         data: bebida,
         success: function (data, textStatus, xhr) {
             for (var ele in data) {
-                var x = document.getElementById('bebida').innerHTML;
-                document.getElementById('bebida').innerHTML = x + "<li id='" + contador_bebida + "' class='" + data[ele]._Cod_bebida + "'> <span>" + data[ele]._Nombre + "</span> </li>";
+                var select = document.getElementById("Bebida").innerHTML;
+                document.getElementById("Bebida").innerHTML = select + "<option value='" + contador_bebida + "' class='" + data[ele]._Cod_bebida + "'>" + data[ele]._Nombre + "</option>";
             }
         },
         error: function (xhr, textStatus, errorThrown) {

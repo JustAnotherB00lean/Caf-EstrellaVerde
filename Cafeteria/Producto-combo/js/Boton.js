@@ -14,15 +14,15 @@ function listadeproductos() {
     contador_combo += 1;
 
     $.ajax({
-        url: "http://localhost:4684/api/Bebidas",
+        url: "http://localhost:4684/api/BEBIDAS",
 
         type: 'POST',
         dataType: 'json',
         data: bebida,
         success: function (data, textStatus, xhr) {
             for (var ele in data) {
-                var select = document.getElementById("Bebida").innerHTML;
-                document.getElementById("Bebida").innerHTML = select + "<option value='" + data[ele]._Cod_bebida + "' class='" + contador_bebida + "'>" + data[ele]._Nombre + "</option>";
+                var x = document.getElementById("Bebida").innerHTML;
+                document.getElementById("Bebida").innerHTML = x + "<option value='" + data[ele]._Cod_bebida + "' class='" + contador_bebida + "'>" + data[ele]._Nombre + "</option>";
             }
         },
         error: function (xhr, textStatus, errorThrown) {
@@ -31,7 +31,7 @@ function listadeproductos() {
     });
 
     $.ajax({
-        url: "http://localhost:4684/api/Bocadillos",
+        url: "http://localhost:4684/api/BOCADILLOS",
 
         type: 'POST',
         dataType: 'json',
@@ -49,7 +49,7 @@ function listadeproductos() {
     });
 
     $.ajax({
-        url: "http://localhost:4684/api/Combos",
+        url: "http://localhost:4684/api/COMBOS",
 
         type: 'POST',
         dataType: 'json',

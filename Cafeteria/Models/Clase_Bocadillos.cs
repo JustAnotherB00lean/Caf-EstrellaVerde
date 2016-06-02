@@ -118,6 +118,41 @@ namespace Cafeteria.Models
                 return respuesta;
             }
 
+            public static List<Bocadillos> Todas_los_Bocadillos()
+            {
+                List<Bocadillos> Listaadevolver = new List<Bocadillos>();
+                Conexion cnx = new Conexion();
+                cnx.parametro();
+                cnx.inicializa();
+                string CONSULTA;
+                System.Data.OleDb.OleDbDataReader CONTENEDOR;
+                CONSULTA = "EXEC SELECCIONAR_BEBIDAS ?";
+                cnx.annadir_consulta(CONSULTA);
+                cnx.annadir_parametro(0, 1);
+                CONTENEDOR = cnx.busca();
+                while (CONTENEDOR.Read())
+                {
+                    Bocadillos NUEVOBOCADILLO = new Bocadillos();
+                    NUEVOBOCADILLO.Cod_bocadillo = Convert.ToInt32(CONTENEDOR["Cod_bocadillo"]);
+                    NUEVOBOCADILLO.Nombre = CONTENEDOR["Nombre"].ToString();
+                    NUEVOBOCADILLO.Ingredientes = CONTENEDOR["ingredientes"].ToString();
+                    NUEVOBOCADILLO.Precio_ind = Convert.ToInt32(CONTENEDOR["Precio_ind"]);
+                    NUEVOBOCADILLO.Precio_porc = Convert.ToInt32(CONTENEDOR["Precio_porc"]);
+                    NUEVOBOCADILLO.Precio_T_ind = Convert.ToInt32(CONTENEDOR["Precio_T_ind"]);
+                    NUEVOBOCADILLO.Precio_T_porc = Convert.ToInt32(CONTENEDOR["Precio_T_porc"]);
+
+
+                    //  NUEVABEBIDA.foto = CONTENEDOR["FOTO"].ToString();
+                    Listaadevolver.Add(NUEVOBOCADILLO);
+
+                }
+                cnx.conexion.Close();
+                cnx.conexion.Dispose();
+                CONTENEDOR.Close();
+                return Listaadevolver;
+
+            }
+
         }
     }
 }

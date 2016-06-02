@@ -35,16 +35,22 @@ namespace Cafeteria.Controllers
                     }
                     case "Eliminar":
                     {
-                    Models.Clase_Cliente.cliente.eliminar_cliente(Convert.ToInt32(form.Get("id")));
-                    HttpResponseMessage response = Request.CreateResponse<int>(HttpStatusCode.Created, 1);
-                    return response;
-                    break;
+                        Models.Clase_Cliente.cliente.eliminar_cliente(Convert.ToInt32(form.Get("id")));
+                        HttpResponseMessage response = Request.CreateResponse<int>(HttpStatusCode.Created, 1);
+                        return response;
+                        break;
                     }
                     case "listar":
                     {
-
                         List<Models.Clase_Cliente.cliente> LISTAVACIA = new List<Models.Clase_Cliente.cliente>();
                         HttpResponseMessage response = Request.CreateResponse<List<Models.Clase_Cliente.cliente>>(HttpStatusCode.Created, Models.Clase_Cliente.cliente.Todos_los_clientes());
+                        return response;
+                        break;
+                    }
+                    case "login":
+                    {
+                        Models.Clase_Cliente.cliente.login(Convert.ToInt32(form.Get("id")), form.Get("pass"));
+                        HttpResponseMessage response = Request.CreateResponse<int>(HttpStatusCode.Created, 1);
                         return response;
                         break;
                     }

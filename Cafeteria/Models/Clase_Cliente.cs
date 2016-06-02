@@ -24,6 +24,33 @@ namespace Cafeteria.Models
             public string _correo { get { return correo; } set { correo = value; } }
             public string _password { get { return password; } set { password = value; } }
 
+            public static int login(int _id, String _password)
+            {
+                int resultado = 0;
+
+                Conexion conx_detalles = new Conexion(); //Crear conexion
+                conx_detalles.parametro();
+                conx_detalles.inicializa();
+                string CONSULTA;
+                System.Data.OleDb.OleDbDataReader CONTENEDOR; //Declarar contenedor
+
+                CONSULTA = "EXEC login ?,?";
+                conx_detalles.annadir_consulta(CONSULTA);
+                conx_detalles.annadir_parametro(_id, 1);
+                conx_detalles.annadir_parametro(_password, 2);
+
+                CONTENEDOR = conx_detalles.busca();
+                while (CONTENEDOR.Read()) //Leer contenedor
+                {
+                    resultado = Convert.ToInt32(CONTENEDOR[0].ToString());
+                }
+                conx_detalles.conexion.Close();
+                conx_detalles.conexion.Dispose();
+                CONTENEDOR.Close();
+
+                return resultado;
+            }
+
             public static int insertar_cliente(int id, String Nombre, int tipo, String correo, String password) //Declarar funcion
             {
                 int respuesta = 0;

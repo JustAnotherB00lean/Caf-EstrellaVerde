@@ -16,36 +16,32 @@ function listadeproductos() {
         dataType: 'json',
         data: bebida,
         success: function (data, textStatus, xhr) {
-
             for (var ele in data) {
                 var x = document.getElementById('bebida').innerHTML;
-                document.getElementById('bebida').innerHTML = x + "<li id='" + contador + "' class='" + data[ele]._Cod_bebida + "'> <span>" + data[ele]._Nombre + "</span> </li>";
-
-            }
-
-
-        },
-        error: function (xhr, textStatus, errorThrown) {
-            alert(xhr + " la wea fallo");
-        }
-    });
-
-    $.ajax({
-        url: "http://localhost:4684/api/Licor",
-
-        type: 'POST',
-        dataType: 'json',
-        data: licor,
-        success: function (data, textStatus, xhr) {
-
-            for (var ele in data) {
-                var y = document.getElementById('licor').innerHTML;
-                document.getElementById('licor').innerHTML = y + "<li id='" + contador_licor + "' class='" + data[ele]._Cod_licor + "'> <span>" + data[ele]._nombre + "</span> </li>";
+                document.getElementById('bebida').innerHTML = x + "<li id='" + contador_bebida + "' class='" + data[ele]._Cod_bebida + "'> <span>" + data[ele]._Nombre + "</span> </li>";
             }
         },
         error: function (xhr, textStatus, errorThrown) {
             alert(xhr + " la wea fallo");
         }
     });
+
+    //$.ajax({
+    //    url: "http://localhost:4684/api/Licor",
+
+    //    type: 'POST',
+    //    dataType: 'json',
+    //    data: licor,
+    //    success: function (data, textStatus, xhr) {
+
+    //        for (var ele in data) {
+    //            var y = document.getElementById('licor').innerHTML;
+    //            document.getElementById('licor').innerHTML = y + "<li id='" + contador_licor + "' class='" + data[ele]._Cod_licor + "'> <span>" + data[ele]._nombre + "</span> </li>";
+    //        }
+    //    },
+    //    error: function (xhr, textStatus, errorThrown) {
+    //        alert(xhr + " la wea fallo");
+    //    }
+    //});
 
 }

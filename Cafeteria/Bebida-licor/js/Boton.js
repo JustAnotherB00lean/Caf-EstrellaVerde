@@ -18,7 +18,7 @@ function listadeproductos() {
         success: function (data, textStatus, xhr) {
             for (var ele in data) {
                 var select = document.getElementById("Bebida").innerHTML;
-                document.getElementById("Bebida").innerHTML = select + "<option value='" + contador_bebida + "' class='" + data[ele]._Cod_bebida + "'>" + data[ele]._Nombre + "</option>";
+                document.getElementById("Bebida").innerHTML = select + "<option value='" + data[ele]._Cod_bebida + "' class='" + contador_bebida + "'>" + data[ele]._Nombre + "</option>";
             }
         },
         error: function (xhr, textStatus, errorThrown) {
@@ -26,22 +26,22 @@ function listadeproductos() {
         }
     });
 
-    //$.ajax({
-    //    url: "http://localhost:4684/api/Licor",
+    $.ajax({
+        url: "http://localhost:4684/api/Licor",
 
-    //    type: 'POST',
-    //    dataType: 'json',
-    //    data: licor,
-    //    success: function (data, textStatus, xhr) {
+        type: 'POST',
+        dataType: 'json',
+        data: licor,
+        success: function (data, textStatus, xhr) {
 
-    //        for (var ele in data) {
-    //            var y = document.getElementById('licor').innerHTML;
-    //            document.getElementById('licor').innerHTML = y + "<li id='" + contador_licor + "' class='" + data[ele]._Cod_licor + "'> <span>" + data[ele]._nombre + "</span> </li>";
-    //        }
-    //    },
-    //    error: function (xhr, textStatus, errorThrown) {
-    //        alert(xhr + " la wea fallo");
-    //    }
-    //});
+            for (var ele in data) {
+                var select = document.getElementById("Licor").innerHTML;
+                document.getElementById("Licor").innerHTML = select + "<option value='" + data[ele]._Cod_licor + "' class='" + contador_licor + "'>" + data[ele]._nombre + "</option>";
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            alert(xhr + " la wea fallo");
+        }
+    });
 
 }

@@ -14,8 +14,9 @@ function login()
 
         if(data==1)
         {
-        alert("Sesion iniciada correctamente");
-            location.href="indexADMIN.html";
+            alert("Sesion iniciada correctamente");
+            localStorage.Usuario = document.getElementById("Id").value;
+            location.href="../../Pagina_Principal.html";
     }
     },
         error:function(xhr,textstatus,errorThrown){
